@@ -28,8 +28,11 @@ private:
 	//any helper private variables you need
 
 	int count;
-
 	List tree;
+
+	bool insert(treeNode*, string, int);
+	bool find(treeNode*, string);
+	string locate(treeNode*, string, string);
 
 public:
 
@@ -48,15 +51,6 @@ public:
 	bool find(string);
 
 	string locate(string);
-
-
-	bool insert(treeNode*, string, int);
-
-	bool find(treeNode*, string);
-
-	string locate(treeNode*, string, string);
-
-
 
 	friend bool operator==(const bTREE& lhs, const bTREE& rhs);
 

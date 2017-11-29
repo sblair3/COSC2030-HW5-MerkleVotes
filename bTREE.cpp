@@ -29,7 +29,7 @@ bTREE::bTREE()
 bTREE::~bTREE()
 
 {
-	delete(tree);
+
 }
 
 

@@ -95,7 +95,7 @@ string pMT::locateHash(string mhash)
 
 
 
-string pMT::hash_1(string key)
+string pMT::hash_SamB(string key)
 /**
  * @brief A function that takes in a key and returns a hash of that key using some custom function
  * @param key, a string
@@ -105,7 +105,7 @@ string pMT::hash_1(string key)
 	return string();
 }
 
-string pMT::hash_2(string key)
+string pMT::hash_SamG(string key)
 /**
  * @brief A function that takes in a key and returns a hash of that key using some custom function
  * @param key, a string
@@ -115,12 +115,22 @@ string pMT::hash_2(string key)
 	return string();
 }
 
-string pMT::hash_3(string key)
+string pMT::hash_Dola(string key)
 /**
  * @brief A function that takes in a key and returns a hash of that key using some custom function
  * @param key, a string
  * @return a hash of the key
  */
+{
+	return string();
+}
+
+string pMT::hash_Easton(string key)
+/**
+* @brief A function that takes in a key and returns a hash of that key using some custom function
+* @param key, a string
+* @return a hash of the key
+*/
 {
 	return string();
 }
