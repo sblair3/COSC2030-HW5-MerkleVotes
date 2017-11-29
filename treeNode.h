@@ -25,8 +25,8 @@ struct treeNode
 {
 	int time;
 	string data;
-	treeNode *nextNode;
-	treeNode *prevNode;
+	treeNode *left;   //changed from nextNode -> left
+	treeNode *right;  //changed from prevNode -> right
 	bool isLeaf = false;
 
 	// Default constructor which sets all values to a "zero or null" state.
@@ -34,8 +34,8 @@ struct treeNode
 	{
 		time = 0;
 		data = "";
-		nextNode = NULL;
-		prevNode = NULL;
+		left = NULL;
+		right = NULL;
 		isLeaf = false;
 	}
 
@@ -44,8 +44,8 @@ struct treeNode
 	{
 		time = 0;
 		data = newData;
-		nextNode = NULL;
-		prevNode = NULL;
+		left = NULL;
+		right = NULL;
 		isLeaf = false;
 	}
 };
