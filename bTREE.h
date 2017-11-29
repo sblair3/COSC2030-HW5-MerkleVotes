@@ -10,30 +10,14 @@ Interfaces of the bTREE class.
 
 #pragma once
 #include <string>
+#include "treeNode.h"
+#include "list.h"
 
 using namespace std;
-
-
 
 class bTREE
 
 {
-
-	struct treeNode {
-
-		string data;
-
-		int time;
-
-		treeNode *left;
-
-		treeNode *right;
-
-		bool leaf();
-
-	};
-
-
 
 private:
 
@@ -45,7 +29,7 @@ private:
 
 	int count;
 
-	treeNode *tree;
+	List tree;
 
 public:
 
