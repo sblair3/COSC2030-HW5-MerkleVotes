@@ -100,8 +100,24 @@ string pMT::hash_SamB(string key)
  * @param key, a string
  * @return a hash of the key
  */
+//I used the ELF function from the previous lab.
+// The main choice for this one was for christmas spirit
 {
-	
+
+	unsigned int hash = 0;
+	unsigned int x = 0;
+
+	for (std::size_t i = 0; i < key.length(); i++)
+	{
+		hash = (hash << 4) + key[i];
+		if ((x = hash & 0xF0000000L) != 0)
+		{
+			hash ^= (x >> 24);
+		}
+		hash &= ~x;
+	}
+
+	return hash;
 }
 
 string pMT::hash_SamG(string key)
