@@ -19,7 +19,7 @@ using namespace std;
 bTREE::bTREE()
 
 {
-	tree = NULL;
+	tree = List();
 
 	count = 0;
 }
