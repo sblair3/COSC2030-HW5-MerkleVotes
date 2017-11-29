@@ -15,6 +15,6 @@ using namespace std;
 
 //int main(int argc, char **argv)
 //{
-//	printf("hello world\n");
+//	printf("I love anime\n");
 //	return 0;
 //}
