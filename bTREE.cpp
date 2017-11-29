@@ -4,7 +4,6 @@ Sam Blair, Oyedola Ajao, Sam Goering, and Easton Tuttle
 Computer Science II
 Homework 5 - Merkle Votes
 November 8, 2017
-
 Implementations of the bTREE class.
 */
 
@@ -19,7 +18,7 @@ using namespace std;
 bTREE::bTREE()
 
 {
-	tree = List();
+	tree =treeNode();
 
 	count = 0;
 }
@@ -29,7 +28,7 @@ bTREE::bTREE()
 bTREE::~bTREE()
 
 {
-
+	delete(tree);
 }
 
 
@@ -53,6 +52,7 @@ int bTREE::numberOfNodes()
 bool bTREE::insert(string data, int time)
 
 {
+	
 	return insert(tree, data, time);
 }
 
@@ -218,12 +218,8 @@ bool operator==(const bTREE & lhs, const bTREE & rhs)
 
 bool operator!=(const bTREE & lhs, const bTREE & rhs)
 {
-	if (lhs.tree->data != rhs.tree->data && lhs.tree->time != rhs.tree->time)
-	{
-		return true;
-	}
-
-	return false;
+	if (lhs.tree->data != rhs.tree->data || lhs.tree->time != rhs.tree->time) { return true; }
+	else { return false; }
 }
 
 std::ostream & operator<<(std::ostream & out, const bTREE & p)
