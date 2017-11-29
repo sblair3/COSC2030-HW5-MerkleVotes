@@ -1,7 +1,12 @@
-//Oyedola Ajao - Group : HashBrowns
-//COSC 2030 - FALL 2017
-//MerkleVotes - Assignments 4, 5, & 6
-//Due : Dec 1 2017
+/*
+bTREE.h
+Sam Blair, Oyedola Ajao, Sam Goering, and Easton Tuttle
+Computer Science II
+Homework 5 - Merkle Votes
+November 8, 2017
+
+Interfaces of the bTREE class.
+*/
 
 #pragma once
 #include <string>
