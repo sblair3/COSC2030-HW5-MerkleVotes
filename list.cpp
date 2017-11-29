@@ -8,7 +8,6 @@ November 27, 2017
 The implementations of the list class.
 */
 
-#include "stdafx.h"
 #include "list.h"
 
 List::List()
@@ -27,7 +26,7 @@ List::~List()
 
 void List::printList()
 {
-	current = head->nextNode;
+	current = head->left;
 	if (current == NULL)
 	{
 		cout << "The list currently contains: \n";
@@ -35,10 +34,10 @@ void List::printList()
 	else
 	{
 		cout << "The list currently contains: ";
-		while (current->nextNode != NULL)
+		while (current->left != NULL)
 		{
 			cout << current->data << ", ";
-			current = current->nextNode;
+			current = current->left;
 		}
 		cout << current->data << "\n";
 	}
@@ -46,12 +45,12 @@ void List::printList()
 
 void List::makeEmpty()
 {
-	head->nextNode = NULL;
+	head->left = NULL;
 }
 
 bool List::isEmpty()
 {
-	if (head->nextNode == NULL)
+	if (head->left == NULL)
 	{
 		return true;
 	}
@@ -65,8 +64,8 @@ bool List::isEmpty()
 void List::insert(string newData)
 {
 	treeNode *newCell = new treeNode(newData);
-	tail->nextNode = newCell;
-	newCell->prevNode = tail;
+	tail->left = newCell;
+	newCell->right = tail;
 	tail = newCell;
 }
 
@@ -75,29 +74,29 @@ void List::remove(string comparison)
 	if (head != NULL)
 	{
 		current = head;
-		while (current->nextNode != NULL)
+		while (current->left != NULL)
 		{
 			if (current->data == comparison)
 			{
-				if (current->prevNode == NULL)
+				if (current->right == NULL)
 				{
-					head = current->nextNode;
+					head = current->left;
 				}
 				else
 				{
 					treeNode *temp;
-					temp = current->nextNode;
-					current = current->prevNode;
-					current->nextNode = temp;
-					temp->prevNode = current;
+					temp = current->left;
+					current = current->right;
+					current->left = temp;
+					temp->right = current;
 				}
 			}
-			current = current->nextNode;
+			current = current->left;
 		}
 		if (tail->data == comparison)
 		{
-			tail = tail->prevNode;
-			tail->nextNode = NULL;
+			tail = tail->right;
+			tail->left = NULL;
 		}
 	}
 	else
@@ -110,8 +109,8 @@ treeNode List::removeFirst()
 {
 	treeNode *tempCell;
 	tempCell = head;
-	head = head->nextNode;
-	head->prevNode = NULL;
+	head = head->left;
+	head->right = NULL;
 	return *tempCell;
 }
 
@@ -119,7 +118,7 @@ treeNode List::removeLast()
 {
 	treeNode *tempCell;
 	tempCell = tail;
-	tail = tail->prevNode;
-	tail->nextNode = NULL;
+	tail = tail->right;
+	tail->left = NULL;
 	return *tempCell;
 }
