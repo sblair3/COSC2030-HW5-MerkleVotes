@@ -4,7 +4,6 @@ Sam Blair, Oyedola Ajao, Sam Goering, and Easton Tuttle
 Computer Science II
 Homework 5 - Merkle Votes
 November 8, 2017
-
 Interfaces of the bTREE class.
 */
 
@@ -21,16 +20,11 @@ class bTREE
 
 private:
 
-	//some data structure to hold your treeNodes together ...
-
-	//DATASTUCTURE treeNodes tree;
-
-	//any helper private variables you need
 
 	int count;
-	List tree;
+	treeNode tree;
 
-	bool insert(treeNode*, string, int);
+	bool insert(treeNode* m, string v , int y);
 	bool find(treeNode*, string);
 	string locate(treeNode*, string, string);
 
