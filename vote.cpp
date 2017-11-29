@@ -1,9 +1,9 @@
 /*
-vote.cpp
-Easton Tuttle
+list.cpp
+Sam Blair, Oyedola Ajao, Sam Goering, and Easton Tuttle
 Computer Science II
 Homework 5 - Merkle Votes
-November 8, 2017
+November 27, 2017
 
 The testing program for the Merkle voting tree.
 */
